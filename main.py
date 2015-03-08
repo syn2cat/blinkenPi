@@ -1,7 +1,17 @@
 #!/usr/bin/env python3
 
-import Image
-import ImageDraw
+try:
+    import Image
+    import ImageDraw
+    HAVE_PIL = True
+except:
+    try:
+        from PIL import Image
+        from PIL import ImageDraw
+        HAVE_PIL = True
+    except:
+        HAVE_PIL = False
+
 import time
 
 from rgbmatrix import Adafruit_RGBmatrix

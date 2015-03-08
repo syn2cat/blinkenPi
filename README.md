@@ -9,7 +9,8 @@ Dependencies
 ------------
 
 ```
-sudo apt-get install python-imaging
+sudo apt-get install python-imaging python3-pip python-requests python3-requests
+sudo pip-3.2 install pillow
 
 # Initialize submodules in repo
 git submodule update --init
