@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+import Image
+import ImageDraw
+import time
+
 import requests
 import json
 
