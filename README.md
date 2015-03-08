@@ -15,7 +15,9 @@ sudo apt-get install python-imaging
 git submodule update --init
 cd rpi-rgb-led-matrix/
 make
+cp rgbmatrix.so ../
 sudo ./minimal-example
 sudo ./led-matrix -D 0
 sudo python matrixtest.py
 ```
+
