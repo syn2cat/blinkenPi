@@ -49,4 +49,4 @@ def closedSpace():
         time.sleep(0.025)
 
 
-if __name__ == “__main__”: main()
+if __name__ == "__main__": main()
