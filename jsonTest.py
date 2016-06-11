@@ -38,7 +38,8 @@ print("Last triggered: " + st)
 if stateOpen == True:
   print("Space is open!")
   countPeople = data['sensors']['people_now_present']
-  print("We are " + str(countPeople[0]['value'])) type(countPeople)
+  print("We are " + str(countPeople[0]['value']))
+  type(countPeople)
 else:
   print("We are closed :(")
 
