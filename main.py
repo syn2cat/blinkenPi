@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
 
 try:
     import Image
@@ -22,7 +24,9 @@ import json
 # Rows and chain length are both required parameters:
 matrix = Adafruit_RGBmatrix(32, 3)
 
-r = requests.get('https://spaceapi.syn2cat.lu/status/json')
+spaceAPI = [ "https://level2.lu/spaceapi/", "https://spaceapi.syn2cat.lu/status/json" ]
+
+r = requests.get(spaceAPI[0])
 
 obj = json.loads(r.text)
 
@@ -58,5 +62,17 @@ def closedSpace():
         matrix.SetImage(image.im.id, n, 1)
         time.sleep(0.025)
 
+def getTime(seconds):
+    sec = timedelta(seconds=int(seconds))
+    d = datetime(1,1,1) + sec
+
+    if d.day-1 > 0:
+        return("{} day(s), {} hour(s), {} minute(s) and {} seconds".format(d.day-1, d.hour, d.minute, d.second))
+    elif d.hour > 0:
+        return("{} hour(s), {} minute(s) and {} seconds".format(d.hour, d.minute, d.second))
+    elif d.minute > 0:
+        return("{} minute(s) and {} seconds".format(d.minute, d.second))
+    else:
+        return("{} seconds".format(d.second))
 
 if __name__ == "__main__": main()
