@@ -21,6 +21,10 @@ from rgbmatrix import Adafruit_RGBmatrix
 import requests
 import json
 
+import subprocess
+
+# subprocess.call('ls', '-l')
+
 # Rows and chain length are both required parameters:
 matrix = Adafruit_RGBmatrix(32, 3)
 
