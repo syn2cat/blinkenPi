@@ -28,9 +28,8 @@ sudo python matrixtest.py
 ```
 
 ```
-# the current convoluted way to start the script is:
-# crontab starts ~/bin/tm.sh with a @reboot entry
-# tm.sh starts tmux
-# tmux starts ~/bin/lcd.sh as root
+# the current way to start the script is:
+# /etc/rc.local running directly lcd.sh as root
 # lcd.sh starts the matrix display in an endless loop
+# future: run lcd.sh earlier in boot process instead of at the end
 ```
