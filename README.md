@@ -27,3 +27,10 @@ sudo ./led-matrix -D 0
 sudo python matrixtest.py
 ```
 
+```
+# the current convoluted way to start the script is:
+# crontab starts ~/bin/tm.sh with a @reboot entry
+# tm.sh starts tmux
+# tmux starts ~/bin/lcd.sh as root
+# lcd.sh starts the matrix display in an endless loop
+```
